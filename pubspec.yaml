@@ -1,0 +1,40 @@
+name: banana_fly
+description: banana flying game of mmxp
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  flame: ^1.10.0
+  flutter:
+    sdk: flutter
+
+  flame_audio: ^2.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.0
+  very_good_analysis: ^5.1.0
+
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # assets:
+  #   - assets/images/
+  #   - assets/audio/
+
+  # fonts:
+  #   - family: Game     
+  #     fonts:
+  #       - asset: assets/fonts/Game.ttf
