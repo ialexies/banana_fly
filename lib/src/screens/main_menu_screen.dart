@@ -26,11 +26,11 @@ class MainMenuScreen extends StatelessWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
               // image: AssetImage(Assets.menu),
-              image: AssetImage('gameassets/images/${Assets.menu}'),
+              image: AssetImage('packages/banana_fly/gameassets/images/${Assets.menu}'),
               fit: BoxFit.cover,
             ),
           ),
-          child: Image.asset('gameassets/images/${Assets.message}'),
+          child: Image.asset('packages/banana_fly/gameassets/images/${Assets.message}'),
         ),
       ),
     );

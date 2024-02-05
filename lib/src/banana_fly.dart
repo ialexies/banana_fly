@@ -28,10 +28,12 @@ class _BananaFlyGameState extends State<BananaFlyGame> {
     super.initState();
 
     // set custom prefix for assets
-    game.images.prefix = 'gameassets/images/';
+    // game.images.prefix = 'gameassets/images/';
+    game.images.prefix = 'packages/banana_fly/gameassets/images/';
     // game.prefix = 'gameassets/';
     // update flame audio updatePrefix
-    FlameAudio.audioCache.prefix = 'gameassets/audio/';
+    // FlameAudio.audioCache.prefix = 'gameassets/audio/';
+    FlameAudio.audioCache.prefix = 'packages/banana_fly/gameassets/audio/';
   }
 
   @override

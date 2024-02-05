@@ -23,7 +23,7 @@ class GameOverScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               // Image.asset(Assets.gameOver),
-              Image.asset('gameassets/images/${Assets.gameOver}'),
+              Image.asset('packages/banana_fly/gameassets/images/${Assets.gameOver}'),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: onRestart,

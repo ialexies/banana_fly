@@ -30,11 +30,15 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # assets:
-  #   - assets/images/
+  assets:
+    - gameassets/images/
+    - gameassets/audio/
+    # - assets/images/
   #   - assets/audio/
 
-  # fonts:
-  #   - family: Game     
-  #     fonts:
-  #       - asset: assets/fonts/Game.ttf
+  fonts:
+    - family: Game     
+      fonts:
+        # - asset: packages/banana_fly/lib/gameassets/fonts/Game.ttf
+        # - asset: packages/banana_fly/lib/gameassets/fonts/Game.ttf
+        - asset: gameassets/fonts/Game.ttf
