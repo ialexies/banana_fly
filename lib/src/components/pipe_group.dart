@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 import 'dart:math';
 import 'package:banana_fly/banana_fly.dart';
 import 'package:flame/components.dart';
@@ -13,12 +15,19 @@ class PipeGroup extends PositionComponent with HasGameRef<MmxpFlameGame> {
     position.x = gameRef.size.x;
 
     final heightMinusGround = gameRef.size.y - Config.groundHeight;
-    final spacing = 100 + _random.nextDouble() * (heightMinusGround / 4);
+    final spacing = 120 + _random.nextDouble() * (heightMinusGround / 4);
+    // final spacing = 500;
     final centerY = spacing + _random.nextDouble() * (heightMinusGround - spacing);
 
-    addAll([
-      Pipe(pipePosition: PipePosition.top, height: centerY - spacing / 2),
-      Pipe(pipePosition: PipePosition.bottom, height: heightMinusGround - (centerY + spacing / 2)),
+    await addAll([
+      Pipe(
+        pipePosition: PipePosition.top,
+        height: centerY - spacing / 2,
+      ),
+      Pipe(
+        pipePosition: PipePosition.bottom,
+        height: heightMinusGround - (centerY + spacing / 2),
+      ),
     ]);
   }
 
