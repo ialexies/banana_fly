@@ -35,13 +35,15 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
 
   TextComponent buildScore() {
     return TextComponent(
-      position: Vector2(size.x / 2, size.y / 2 * 0.2),
+      position: Vector2(size.x / 2, (size.y / 2 * 0.2) + 100),
       anchor: Anchor.center,
       textRenderer: TextPaint(
         style: const TextStyle(
-          fontSize: 40,
+          fontSize: 80,
           fontFamily: 'Game',
-          fontWeight: FontWeight.bold,
+          // color transparent white
+          color: Color.fromARGB(83, 255, 255, 255),
+          fontWeight: FontWeight.w800,
         ),
       ),
     );
