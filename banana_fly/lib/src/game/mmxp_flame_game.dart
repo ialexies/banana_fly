@@ -12,6 +12,7 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
   MmxpFlameGame();
 
   late Monkey monkey;
+  late PipeGroup pipeGroup;
   Timer interval = Timer(Config.pipeInterval, repeat: true);
   bool isHit = false;
   TextComponent score = TextComponent(text: '0');
@@ -29,7 +30,7 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
     ]);
 
     interval.onTick = () => addAll([
-          PipeGroup(),
+          pipeGroup = PipeGroup(),
         ]);
   }
 

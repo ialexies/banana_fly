@@ -9,7 +9,7 @@ class GameOverScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Material(
-        color: Colors.black38,
+        color: const Color.fromARGB(193, 0, 0, 0),
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -31,6 +31,8 @@ class GameOverScreen extends StatelessWidget {
 
   void onRestart() {
     game.monkey.reset();
+    // clear all pipes
+    game.removeWhere((component) => component is PipeGroup);
     game.overlays.remove('gameOver');
     game.resumeEngine();
   }

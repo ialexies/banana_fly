@@ -37,6 +37,14 @@ class PipeGroup extends PositionComponent with HasGameRef<MmxpFlameGame> {
     FlameAudio.play(Assets.point);
   }
 
+  void reset() {
+    position.x = gameRef.size.x;
+    final heightMinusGround = gameRef.size.y - Config.groundHeight;
+    final spacing = 120 + _random.nextDouble() * (heightMinusGround / 4);
+    final centerY = spacing + _random.nextDouble() * (heightMinusGround - spacing);
+    // components.clear();
+  }
+
   @override
   void update(double dt) {
     super.update(dt);
