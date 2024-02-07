@@ -42,7 +42,7 @@ class PipeGroup extends PositionComponent with HasGameRef<MmxpFlameGame> {
     super.update(dt);
     position.x -= (Config.gameSpeed) * dt;
 
-    if (position.x < -10) {
+    if (position.x < -40) {
       removeFromParent();
       updateScore();
     }

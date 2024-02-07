@@ -1,10 +1,11 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:banana_fly/banana_fly.dart';
 import 'package:flutter/material.dart';
 
 class GameOverScreen extends StatelessWidget {
+  const GameOverScreen({required this.game, super.key});
   final MmxpFlameGame game;
-
-  const GameOverScreen({Key? key, required this.game}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Material(
@@ -13,20 +14,11 @@ class GameOverScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                'Score: ${game.monkey.score}',
-                style: const TextStyle(
-                  fontSize: 60,
-                  color: Colors.white,
-                  fontFamily: 'Game',
-                ),
-              ),
-              const SizedBox(height: 20),
-              const Text('Game Over', style: TextStyle(fontSize: 40, color: Colors.white, fontFamily: 'Game')),
+              Image.asset('packages/banana_fly/gameassets/images/${Assets.gameOver}', width: 200),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: onRestart,
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
                 child: const Text(
                   'Restart',
                   style: TextStyle(fontSize: 20),
