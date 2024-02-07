@@ -17,6 +17,7 @@ class PipeGroup extends PositionComponent with HasGameRef<MmxpFlameGame> {
     final heightMinusGround = gameRef.size.y - Config.groundHeight;
     final spacing = 120 + _random.nextDouble() * (heightMinusGround / 4);
     // final spacing = 500;
+    // ignore: lines_longer_than_80_chars
     final centerY = spacing + _random.nextDouble() * (heightMinusGround - spacing);
 
     await addAll([

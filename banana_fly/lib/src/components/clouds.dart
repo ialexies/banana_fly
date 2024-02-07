@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:banana_fly/banana_fly.dart';
 import 'package:flame/components.dart';
 import 'package:flame/extensions.dart';

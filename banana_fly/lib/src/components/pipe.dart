@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:banana_fly/banana_fly.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
@@ -23,11 +25,9 @@ class Pipe extends SpriteComponent with HasGameRef<MmxpFlameGame> {
       case PipePosition.top:
         position.y = 0;
         sprite = Sprite(pipeRotated);
-        break;
       case PipePosition.bottom:
         position.y = gameRef.size.y - size.y - Config.groundHeight;
         sprite = Sprite(pipe);
-        break;
     }
 
     add(RectangleHitbox());

@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars, public_member_api_docs
+
 import 'package:banana_fly/banana_fly.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
@@ -11,16 +13,11 @@ class Monkey extends SpriteGroupComponent<BirdMovement> with HasGameRef<MmxpFlam
 
   int score = 0;
 
-  get scoreStreamController => null;
-
   @override
   Future<void> onLoad() async {
     final birdMidFlap = await gameRef.loadSprite(Assets.birdMidFlap);
     final birdUpFlap = await gameRef.loadSprite(Assets.birdUpFlap);
     final birdDownFlap = await gameRef.loadSprite(Assets.birdDownFlap);
-
-    gameRef.monkey;
-    ;
 
     size = Vector2(50, 50);
     position = Vector2(50, gameRef.size.y / 2 - size.y / 2);

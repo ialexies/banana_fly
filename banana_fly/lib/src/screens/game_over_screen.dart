@@ -22,8 +22,6 @@ class GameOverScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              // Image.asset(Assets.gameOver),
-              // Image.asset('packages/banana_fly/gameassets/images/${Assets.gameOver}'),
               const Text('Game Over', style: TextStyle(fontSize: 40, color: Colors.white, fontFamily: 'Game')),
               const SizedBox(height: 20),
               ElevatedButton(

@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 class Config {
   static const groundHeight = 110.0;
   static const gameSpeed = 200.0;

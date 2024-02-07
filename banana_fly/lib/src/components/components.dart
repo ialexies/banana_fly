@@ -1,5 +1,3 @@
-// TODO Implement this library.
-
 export 'background.dart';
 export 'bird.dart';
 export 'clouds.dart';

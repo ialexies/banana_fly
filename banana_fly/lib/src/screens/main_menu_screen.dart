@@ -1,14 +1,15 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:banana_fly/banana_fly.dart';
 import 'package:flutter/material.dart';
 
 class MainMenuScreen extends StatelessWidget {
+  const MainMenuScreen({
+    required this.game,
+    super.key,
+  });
   final MmxpFlameGame game;
   static const String id = 'mainMenu';
-
-  const MainMenuScreen({
-    Key? key,
-    required this.game,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

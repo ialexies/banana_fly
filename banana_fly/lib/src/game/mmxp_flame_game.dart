@@ -10,22 +10,14 @@ import 'package:flutter/painting.dart';
 
 class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
   MmxpFlameGame();
-  // await Flame.device.fullScreen();
-  late Monkey monkey; // await Flame.device.fullScreen();
+
+  late Monkey monkey;
   Timer interval = Timer(Config.pipeInterval, repeat: true);
   bool isHit = false;
   TextComponent score = TextComponent(text: '0');
 
-// game state listener
-
   @override
   Future<void> onLoad() async {
-    // game listener
-    MmxpFlameGame.addListener(() {
-      // listen to changes
-      print('fdfdfdfdfdf---------');
-    });
-
     images.prefix = 'packages/banana_fly/gameassets/images/';
     FlameAudio.audioCache.prefix = 'packages/banana_fly/gameassets/audio/';
     await addAll([
@@ -73,8 +65,4 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
   void render(Canvas canvas) {
     super.render(canvas);
   }
-
-  static void addListener(Null Function() param0) {}
-
-  // listen method that will liste to changes of this class and return a stream
 }
