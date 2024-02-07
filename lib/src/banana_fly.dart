@@ -8,11 +8,6 @@ import 'package:flutter/material.dart';
 class BananaFlyGame extends StatelessWidget {
   BananaFlyGame({Key? key}) : super(key: key);
   final MmxpFlameGame game = MmxpFlameGame();
-  //     game.images.prefix = 'packages/banana_fly/gameassets/images/';
-//     // game.prefix = 'gameassets/';
-//     // update flame audio updatePrefix
-//     // FlameAudio.audioCache.prefix = 'gameassets/audio/';
-//     FlameAudio.audioCache.prefix = 'packages/banana_fly/gameassets/audio/';
   @override
   Widget build(BuildContext context) {
     game.images.prefix = 'packages/banana_fly/gameassets/images/';
@@ -23,10 +18,7 @@ class BananaFlyGame extends StatelessWidget {
       overlayBuilderMap: {
         'mainMenu': (context, _) => MainMenuScreen(game: game),
         'gameOver': (context, _) => GameOverScreen(game: game),
-        // overlay ground image
       },
     );
   }
 }
-
-
