@@ -5,6 +5,7 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame_audio/flame_audio.dart';
+import 'package:flame_lottie/flame_lottie.dart';
 
 import 'package:flutter/painting.dart';
 
@@ -21,8 +22,17 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
   Future<void> onLoad() async {
     images.prefix = 'packages/banana_fly/gameassets/images/';
     FlameAudio.audioCache.prefix = 'packages/banana_fly/gameassets/audio/';
+    final asset = Lottie.asset('packages/banana_fly/gameassets/images/backanimation.json');
+    final animation = await loadLottie(asset);
+    add(
+      LottieComponent(
+        animation,
+        repeating: true, // Continuously loop the animation.
+        size: Vector2(size.x, size.y),
+        fit: BoxFit.fill,
+      ),
+    );
     await addAll([
-      Background(),
       monkey = Monkey(),
       Clouds(),
       Ground(),
