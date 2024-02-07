@@ -6,8 +6,8 @@ import 'package:flame_audio/flame_audio.dart';
 
 import 'package:flutter/material.dart';
 
-class Bird extends SpriteGroupComponent<BirdMovement> with HasGameRef<MmxpFlameGame>, CollisionCallbacks {
-  Bird();
+class Monkey extends SpriteGroupComponent<BirdMovement> with HasGameRef<MmxpFlameGame>, CollisionCallbacks {
+  Monkey();
 
   int score = 0;
 
@@ -17,9 +17,10 @@ class Bird extends SpriteGroupComponent<BirdMovement> with HasGameRef<MmxpFlameG
     final birdUpFlap = await gameRef.loadSprite(Assets.birdUpFlap);
     final birdDownFlap = await gameRef.loadSprite(Assets.birdDownFlap);
 
-    gameRef.bird;
+    gameRef.monkey;
+    ;
 
-    size = Vector2(50, 40);
+    size = Vector2(50, 50);
     position = Vector2(50, gameRef.size.y / 2 - size.y / 2);
     current = BirdMovement.middle;
     sprites = {

@@ -2,7 +2,7 @@ import 'package:banana_fly/banana_fly.dart';
 import 'package:flutter/material.dart';
 
 class GameOverScreen extends StatelessWidget {
-  final game;
+  final MmxpFlameGame game;
 
   const GameOverScreen({Key? key, required this.game}) : super(key: key);
 
@@ -14,7 +14,7 @@ class GameOverScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Score: ${game.bird.score}',
+                'Score: ${game.monkey.score}',
                 style: const TextStyle(
                   fontSize: 60,
                   color: Colors.white,
@@ -23,7 +23,8 @@ class GameOverScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               // Image.asset(Assets.gameOver),
-              Image.asset('packages/banana_fly/gameassets/images/${Assets.gameOver}'),
+              // Image.asset('packages/banana_fly/gameassets/images/${Assets.gameOver}'),
+              const Text('Game Over', style: TextStyle(fontSize: 40, color: Colors.white, fontFamily: 'Game')),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: onRestart,
@@ -39,7 +40,7 @@ class GameOverScreen extends StatelessWidget {
       );
 
   void onRestart() {
-    game.bird.reset();
+    game.monkey.reset();
     game.overlays.remove('gameOver');
     game.resumeEngine();
   }

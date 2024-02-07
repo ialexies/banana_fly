@@ -22,24 +22,24 @@ class PipeGroup extends PositionComponent with HasGameRef<MmxpFlameGame> {
     await addAll([
       Pipe(
         pipePosition: PipePosition.top,
-        height: centerY - spacing / 2,
+        height: centerY - (spacing / 2) - 30,
       ),
       Pipe(
         pipePosition: PipePosition.bottom,
-        height: heightMinusGround - (centerY + spacing / 2),
+        height: heightMinusGround - (centerY + spacing / 2) - 30,
       ),
     ]);
   }
 
   void updateScore() {
-    gameRef.bird.score += 1;
+    gameRef.monkey.score += 1;
     FlameAudio.play(Assets.point);
   }
 
   @override
   void update(double dt) {
     super.update(dt);
-    position.x -= Config.gameSpeed * dt;
+    position.x -= (Config.gameSpeed) * dt;
 
     if (position.x < -10) {
       removeFromParent();
