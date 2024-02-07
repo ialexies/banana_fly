@@ -14,9 +14,18 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
   late Monkey monkey; // await Flame.device.fullScreen();
   Timer interval = Timer(Config.pipeInterval, repeat: true);
   bool isHit = false;
-  late TextComponent score;
+  TextComponent score = TextComponent(text: '0');
+
+// game state listener
+
   @override
   Future<void> onLoad() async {
+    // game listener
+    MmxpFlameGame.addListener(() {
+      // listen to changes
+      print('fdfdfdfdfdf---------');
+    });
+
     images.prefix = 'packages/banana_fly/gameassets/images/';
     FlameAudio.audioCache.prefix = 'packages/banana_fly/gameassets/audio/';
     await addAll([
@@ -55,7 +64,7 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
   void update(double dt) {
     super.update(dt);
     interval.update(dt);
-    score.text = 'Score: ${monkey.score}';
+    score.text = '${monkey.score}';
   }
 
   // override render
@@ -66,4 +75,6 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
   }
 
   static void addListener(Null Function() param0) {}
+
+  // listen method that will liste to changes of this class and return a stream
 }

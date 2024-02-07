@@ -11,6 +11,8 @@ class Monkey extends SpriteGroupComponent<BirdMovement> with HasGameRef<MmxpFlam
 
   int score = 0;
 
+  get scoreStreamController => null;
+
   @override
   Future<void> onLoad() async {
     final birdMidFlap = await gameRef.loadSprite(Assets.birdMidFlap);
