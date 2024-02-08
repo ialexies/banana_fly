@@ -68,7 +68,9 @@ class Monkey extends SpriteGroupComponent<BirdMovement> with HasGameRef<MmxpFlam
   }
 
   void gameOver() {
-    FlameAudio.play(Assets.collision);
+    FlameAudio.play(
+      Assets.collision,
+    );
     game.isHit = true;
     gameRef.overlays.add('gameOver');
     gameRef.pauseEngine();

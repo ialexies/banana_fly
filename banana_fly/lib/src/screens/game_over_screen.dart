@@ -15,15 +15,12 @@ class GameOverScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Image.asset('packages/banana_fly/gameassets/images/${Assets.gameOver}', width: 200),
-              // Score
-              LottieBuilder.network(
-                'https://lottie.host/c12238fa-674a-43d1-a9f0-46c82b7c3303/Axxyd7ROzL.json',
-                width: 200,
-                height: 200,
-              ),
+              Lottie.asset('packages/banana_fly/gameassets/images/gameover.json', width: 200),
               Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 10,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.black.withOpacity(0.6),
                   borderRadius: BorderRadius.circular(10),
@@ -37,7 +34,6 @@ class GameOverScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: onRestart,
