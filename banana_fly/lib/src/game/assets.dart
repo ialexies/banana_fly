@@ -1,7 +1,9 @@
 // ignore_for_file: public_member_api_docs
 
 class Assets {
-  static const backgorund = 'background.png';
+  // static const backgorund = 'background.png';
+  static const backgorund = 'bg_hostels.png';
+  static const sky = 'sky.png';
   static const ground = 'ground.png';
   static const clouds = 'clouds.png';
   static const pipe = 'pipe.png';
