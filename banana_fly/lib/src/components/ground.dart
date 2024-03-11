@@ -28,6 +28,6 @@ class Ground extends ParallaxComponent<MmxpFlameGame> with HasGameRef<MmxpFlameG
   @override
   void update(double dt) {
     super.update(dt);
-    parallax?.baseVelocity.x = Config.gameSpeed;
+    parallax?.baseVelocity.x = Config.gameSpeed * Config.groundParlxSpeed;
   }
 }

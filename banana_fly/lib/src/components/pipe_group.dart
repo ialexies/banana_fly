@@ -10,6 +10,7 @@ class PipeGroup extends PositionComponent with HasGameRef<MmxpFlameGame> {
 
   final _random = Random();
 
+
   @override
   Future<void> onLoad() async {
     position.x = gameRef.size.x;
@@ -20,6 +21,12 @@ class PipeGroup extends PositionComponent with HasGameRef<MmxpFlameGame> {
     // ignore: lines_longer_than_80_chars
     final centerY = spacing + _random.nextDouble() * (heightMinusGround - spacing);
 
+    final pipeBottomHeight = heightMinusGround - (centerY + spacing / 2) - 30;
+
+
+    
+
+
     await addAll([
       Pipe(
         pipePosition: PipePosition.top,
@@ -27,7 +34,7 @@ class PipeGroup extends PositionComponent with HasGameRef<MmxpFlameGame> {
       ),
       Pipe(
         pipePosition: PipePosition.bottom,
-        height: heightMinusGround - (centerY + spacing / 2) - 30,
+        height: pipeBottomHeight,
       ),
     ]);
   }

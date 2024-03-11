@@ -13,11 +13,16 @@ class Clouds extends ParallaxComponent<MmxpFlameGame> with HasGameRef<MmxpFlameG
   Future<void> onLoad() async {
     final image = await Flame.images.load(Assets.clouds);
     position = Vector2(x, -(gameRef.size.y - Config.cloudsHeight));
+    // position = Vector2(x, 500);
+    height = 1500;
+    // width = 900;
+    // size = Vector2(gameRef.size.x, Config.cloudsHeight);
+
     parallax = Parallax([
       ParallaxLayer(
         ParallaxImage(image, fill: LayerFill.none),
       ),
-    ]);
+    ], size: Vector2(gameRef.size.x, Config.cloudsHeight));
   }
 
   @override

@@ -26,7 +26,7 @@ class Pipe extends SpriteComponent with HasGameRef<MmxpFlameGame> {
         position.y = 0;
         sprite = Sprite(pipeRotated);
       case PipePosition.bottom:
-        position.y = gameRef.size.y - size.y - Config.groundHeight;
+        position.y = gameRef.size.y - size.y;
         sprite = Sprite(pipe);
     }
 

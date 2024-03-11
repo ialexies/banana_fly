@@ -32,7 +32,7 @@ class MMAnimatedsKY extends ParallaxComponent<MmxpFlameGame> with HasGameRef<Mmx
   @override
   void update(double dt) {
     super.update(dt);
-    parallax?.baseVelocity.x = Config.gameSpeed;
+    parallax?.baseVelocity.x = Config.gameSpeed * 1.2;
   }
 }
 
@@ -56,7 +56,34 @@ class MMAnimatedBackground extends ParallaxComponent<MmxpFlameGame> with HasGame
   @override
   void update(double dt) {
     super.update(dt);
-    parallax?.baseVelocity.x = Config.gameSpeed;
+    parallax?.baseVelocity.x = Config.gameSpeed * Config.bgParlxSpeed;
+  }
+}
+
+class MMAnimatedCloud extends ParallaxComponent<MmxpFlameGame> with HasGameRef<MmxpFlameGame> {
+  MMAnimatedCloud();
+
+  @override
+  Future<void> onLoad() async {
+    final ground = await Flame.images.load(Assets.clouds);
+    // position = Vector2(x, -(gameRef.size.y - Config.cloudsHeight));
+    position = Vector2(x, -(gameRef.size.y - 1500));
+    height = 10;
+    parallax = Parallax(
+      [
+        ParallaxLayer(
+          ParallaxImage(ground, fill: LayerFill.height),
+        ),
+      ],
+      // size: Vector2(, GAME),
+    );
+    position = Vector2(0, 0);
+  }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    parallax?.baseVelocity.x = Config.gameSpeed * Config.cloudParlxSpeed;
   }
 }
 
@@ -83,15 +110,18 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
     //     fit: BoxFit.fill,
     //   ),
     // );
-    add(
-      MMAnimatedsKY(),
-    );
-    add(
-      MMAnimatedBackground(),
-    );
+    // add(
+
+    // );
+    // add(
+
+    // );
     await addAll([
+      MMAnimatedsKY(),
+      MMAnimatedBackground(),
+      MMAnimatedCloud(),
       monkey = Monkey(),
-      Clouds(),
+      // Clouds(),
       Ground(),
       score = buildScore(),
     ]);
