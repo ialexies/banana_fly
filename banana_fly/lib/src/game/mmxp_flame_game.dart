@@ -32,16 +32,16 @@ class MMAnimatedsKY extends ParallaxComponent<MmxpFlameGame> with HasGameRef<Mmx
   @override
   void update(double dt) {
     super.update(dt);
-    parallax?.baseVelocity.x = Config.gameSpeed * 1.2;
+    parallax?.baseVelocity.x = Config.gameSpeed * Config.skyParlxSpeed;
   }
 }
 
-class MMAnimatedBackground extends ParallaxComponent<MmxpFlameGame> with HasGameRef<MmxpFlameGame> {
-  MMAnimatedBackground();
+class BgDestinations extends ParallaxComponent<MmxpFlameGame> with HasGameRef<MmxpFlameGame> {
+  BgDestinations();
 
   @override
   Future<void> onLoad() async {
-    final ground = await Flame.images.load(Assets.backgorund);
+    final ground = await Flame.images.load(Assets.bg_destinations);
     parallax = Parallax(
       [
         ParallaxLayer(
@@ -56,7 +56,7 @@ class MMAnimatedBackground extends ParallaxComponent<MmxpFlameGame> with HasGame
   @override
   void update(double dt) {
     super.update(dt);
-    parallax?.baseVelocity.x = Config.gameSpeed * Config.bgParlxSpeed;
+    parallax?.baseVelocity.x = Config.gameSpeed * Config.destParlxSpeed;
   }
 }
 
@@ -118,8 +118,8 @@ class MmxpFlameGame extends FlameGame with TapDetector, HasCollisionDetection {
     // );
     await addAll([
       MMAnimatedsKY(),
-      MMAnimatedBackground(),
       MMAnimatedCloud(),
+      BgDestinations(),
       monkey = Monkey(),
       // Clouds(),
       Ground(),

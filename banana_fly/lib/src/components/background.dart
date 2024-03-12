@@ -11,7 +11,7 @@ class Background extends SpriteComponent with HasGameRef<MmxpFlameGame> {
 
   @override
   Future<void> onLoad() async {
-    final background = await Flame.images.load(Assets.backgorund);
+    final background = await Flame.images.load(Assets.bg_destinations);
 
     size = gameRef.size;
     sprite = Sprite(background);

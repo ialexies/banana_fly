@@ -11,9 +11,10 @@
 class Config {
   static const groundHeight = 30.0;
   static const gameSpeed = 200.0;
-  static const bgParlxSpeed = .6;
+  static const destParlxSpeed = .6;
   static const cloudParlxSpeed = .3;
   static const groundParlxSpeed = 1.5;
+  static const skyParlxSpeed = .4;
   static const pipeInterval = 1.5;
   static const pipeWidth = 80.0;
   static const birdVelocity = 210;

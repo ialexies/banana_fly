@@ -2,7 +2,7 @@
 
 class Assets {
   // static const backgorund = 'background.png';
-  static const backgorund = 'bg_hostels.png';
+  static const bg_destinations = 'bg_hostels.png';
   static const sky = 'sky.png';
   static const ground = 'ground.png';
   static const clouds = 'clouds.png';
